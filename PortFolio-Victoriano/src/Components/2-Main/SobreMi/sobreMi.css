@@ -1,0 +1,45 @@
+#sobre-mi-content, #contacto-content{
+    position: relative;
+    display: flex;
+    width: 1000px;
+    height: 100%;
+    color: rgb(50, 45, 50);
+}
+
+#foto, #papel{
+    image-rendering: pixelated;  
+}
+
+#foto{
+    width: 320px;
+    height: 300px;
+    transform: rotate(-1.8deg);
+}
+
+#papel{
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+#texto{
+    margin: 50px 35px;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    gap: 34px;
+}
+
+#texto h4{
+    /* background-color: rgba(139, 16, 104, 0.222); */
+    display: block;
+    width: 75%;
+    height: 65px;
+    line-height: 1.5;
+}
+
+#texto p{
+    /* background-color: rgba(137, 43, 226, 0.222); */
+    display: block;
+    
+}
