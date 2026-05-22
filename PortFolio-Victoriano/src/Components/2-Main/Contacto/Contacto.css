@@ -1,6 +1,27 @@
+#contacto-content #papel{
+    height: auto;
+}
+
 .contacto-informacion{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    padding: 5px 40px 0px 200px;
-    gap: 25px;
+    padding: 10px 0px 0px 20%;
+    gap: 30px 0px;
+}
+
+
+/* Mobile (menos de 767px) */
+@media (max-width: 767px) {
+    .contacto-informacion{
+        grid-template-columns: repeat(1, 1fr);
+        padding: 0px 30px;
+        font-size: medium;
+    }
+}
+
+/* Modbile (menos de 550px) */
+@media (max-width: 550px) {
+    .contacto-informacion{
+        padding: 10px;
+    }
 }

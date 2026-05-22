@@ -3,7 +3,9 @@
 body{
     margin: 0;
     padding: 0;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: #909a92;
 }
 
 :root {
@@ -31,90 +33,3 @@ img{
     -moz-user-select: none;
     -ms-user-select: none;    
 }
-
-#close-Modal{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 30px;
-    height: 30px;
-    background-color: var(--color5);
-    color: var(--fondogeneral);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 101;
-}
-
-.modal-overlay {
-    z-index: 100;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.273);
-    display: flex;
-    justify-content: center;
-    align-items:end;
-}
-
-.modal-content {
-    width: 85vw;
-    height: 95vh;
-    color: var(--fondogeneral);
-}
-
-.modal-tabs {
-    display: flex;
-    justify-content:flex-start;
-    width: 100%;
-}
-
-
-.tab{
-    position: relative;  
-    border-radius: 10px 10px 0 0;
-}
-.tab h2{
-    top: 0;
-    padding: 20px;
-    cursor: pointer;
-    font-size: small;
-    text-align: center;
-}
-.tab img{
-    height: 100%;
-}
-
-.tab:hover{
-    translate: 0px -5px;
-    transform: scaleY(1.2);
-}
-
-.tabActivo{
-    color: #f4e773;
-}
-
-.modal-form{
-    position: relative;
-    display: flex;
-    align-items: center;
-    padding: 20px;
-    flex-direction: column;
-    height: 100%;
-    border-radius: 20px 20px 0 0;
-}
-.modal-form #cuerpo, .tab img{
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: -1;
-}
-
-.margenleft{
-    margin-left: 15px;
-}
-

@@ -1,13 +1,65 @@
-import { useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import "./Main.css"
 import SobreMi from "./SobreMi/SobreMi";
 import Skills from "./Skills/Skills";
 import Proyectos from "./Proyectos/Proyectos";
 import Contacto from "./Contacto/Contacto";
+import RandomBox from "../RandomBox/RandomBox";
 
 const Main = ()=>{
     const [isOpen, setIsOpen] = useState(false);
+    const ref1 = useRef<any>(null);
+    const ref2 = useRef<any>(null);
+    const ref3 = useRef<any>(null);
+    const ref4 = useRef<any>(null);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeTab, setActiveTab] = useState("sm");
+
+    const handleClick = () => {
+        if (isMenuOpen) {
+            switch (activeTab) {
+                case "sm":
+                    // ref1.current.style.display = "none";
+                    ref2.current.style.display = "none";
+                    ref3.current.style.display = "none";
+                    ref4.current.style.display = "none";
+                    break;
+                case "sk":
+                    ref1.current.style.display = "none";
+                    // ref2.current.style.display = "none";
+                    ref3.current.style.display = "none";
+                    ref4.current.style.display = "none";
+                    break;
+                case "pr":
+                    ref1.current.style.display = "none";
+                    ref2.current.style.display = "none";
+                    // ref3.current.style.display = "none";
+                    ref4.current.style.display = "none";
+                    break;
+                case "co":
+                    ref1.current.style.display = "none";
+                    ref2.current.style.display = "none";
+                    ref3.current.style.display = "none";
+                    // ref4.current.style.display = "none";
+                    break;
+            }
+            setIsMenuOpen(false);
+        }else{
+            ref1.current.style.display = "block";
+            ref2.current.style.display = "block";
+            ref3.current.style.display = "block";
+            ref4.current.style.display = "block";
+            setIsMenuOpen(true);
+        }
+    }
+
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflowY = "hidden";
+        } else {
+            document.body.style.overflowY = "auto";
+        }
+    }, [isOpen]);
 
     return(
         <div id="main">
@@ -17,7 +69,7 @@ const Main = ()=>{
                 <div id="content-titulo">
                     
                     {/* <div className="imagenFondo">
-
+                        <RandomBox/>
                     </div> */}
 
                     <div className="titulo">
@@ -70,28 +122,32 @@ const Main = ()=>{
             {isOpen && (
                 <>
                     <div className="modal-overlay">
+                        
                         <div className="modal-content">
+
+                            <div id="close-Modal" onClick={() => {setIsOpen(false); setIsMenuOpen(false)}}></div>
+                            <div id="menu-Modal" onClick={() => handleClick()}></div>
 
                             <div className="modal-tabs">
 
-                                <div className="tab">
+                                <div className={`tab ${activeTab === "sm" ? "tabActivo" : ""}`} ref={ref1}>
                                     <img id="cuerpo"  className="violetaImg1" src="./Archivo-Pestaña2.png"  alt="archivo" />
-                                    <h2 onClick={() => setActiveTab("sm")} className={activeTab === "sm" ? "tabActivo" : ""}>Sobre Mi</h2>
+                                    <h2 onClick={() => setActiveTab("sm")}>Sobre Mi</h2>
                                 </div> 
 
-                                <div className="tab">
+                                <div className={`tab ${activeTab === "sk" ? "tabActivo" : ""}`} ref={ref2}>
                                     <img id="cuerpo"  className="violetaImg2" src="./Archivo-Pestaña2.png"  alt="archivo" />
-                                    <h2 onClick={() => setActiveTab("sk")} className={activeTab === "sk" ? "tabActivo" : ""}>Skills</h2>
+                                    <h2 onClick={() => setActiveTab("sk")}>Skills</h2>
                                 </div>
 
-                                <div className="tab">
+                                <div className={`tab ${activeTab === "pr" ? "tabActivo" : ""}`} ref={ref3}>
                                     <img id="cuerpo"  className="violetaImg3" src="./Archivo-Pestaña2.png"  alt="archivo" />
-                                    <h2 onClick={() => setActiveTab("pr")} className={activeTab === "pr" ? "tabActivo" : ""}>Proyectos</h2>
+                                    <h2 onClick={() => setActiveTab("pr")}>Proyectos</h2>
                                 </div>
 
-                                <div className="tab">
+                                <div className={`tab ${activeTab === "co" ? "tabActivo" : ""}`} ref={ref4}>
                                     <img id="cuerpo"  className="violetaImg4" src="./Archivo-Pestaña2.png"  alt="archivo" />
-                                    <h2 onClick={() => setActiveTab("co")} className={activeTab === "co" ? "tabActivo" : ""}>Contacto</h2>
+                                    <h2 onClick={() => setActiveTab("co")}>Contacto</h2>
                                 </div>
 
                             </div>
@@ -112,10 +168,9 @@ const Main = ()=>{
                             </form>
                             
                         </div>
-                    </div>
-                    <div id="close-Modal" onClick={() => setIsOpen(false)}>
                         
                     </div>
+                    
                 </>
             )}
         </div>

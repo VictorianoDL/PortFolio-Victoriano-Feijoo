@@ -1,12 +1,11 @@
 import "./Contacto.css"
 
 const Contacto = ()=>{
-
-
     return(
         <div id="contacto-content">
 
             <img id="papel" src="./Papel-3.png" alt="Papel" />
+            <img id="papel-mobile" src="./Papel-Mobile.png" alt="Papel" />
 
             <div className="skills-grid">
 
@@ -21,7 +20,7 @@ const Contacto = ()=>{
 
                     <div>
                         <p className="negrita">Telefono</p>
-                        <p>+54 2494 349739</p>
+                        <p>+54 2494-349739</p>
                     </div>
 
                     <div>

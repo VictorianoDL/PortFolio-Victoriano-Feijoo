@@ -189,16 +189,16 @@
     width: 20px;
     height: 20px;
     aspect-ratio: 1/1;
-    border-radius: 50%;
-    box-shadow: 
+    /* border-radius: 50%; */
+    /* box-shadow: 
                 0 0 10px #8000FF, 0 0 10px #8000FF,
                 0 0 10px #8000FF, 0 0 10px #8000FF,
                 0 0 10px #8000FF, 0 0 10px #8000FF,
                 0 0 10px #8000FF, 0 0 10px #8000FF,
                 0 0 10px #8000FF, 0 0 10px #8000FF,
-                0 0 10px #8000FF, 0 0 50px #8000FF;
+                0 0 10px #8000FF, 0 0 50px #8000FF; */
     transform: scale(2.5,2.5);
-    animation: animateCircle 2s linear infinite;            
+    /* animation: animateCircle 2s linear infinite;             */
 }
 @keyframes animateCircle{
     0%{
@@ -248,11 +248,11 @@
     height: 20px;
     aspect-ratio: 1/1;
     background: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0 0 10px #8000FF, 0 0 10px #8000FF,
+    /* border-radius: 50%; */
+    /* box-shadow: 0 0 10px #8000FF, 0 0 10px #8000FF,
                 0 0 10px #8000FF, 0 0 10px #8000FF,
                 0 0 10px #8000FF, 0 0 20px #8000FF,
-                0 0 30px #8000FF, 0 0 50px #8000FF; 
+                0 0 30px #8000FF, 0 0 50px #8000FF;  */
     transform: scale(0.1,0.1);
     animation: animate1 2s linear infinite;
 }

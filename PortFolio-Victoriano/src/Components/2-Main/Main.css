@@ -8,6 +8,9 @@
 
 /* Contenido Izquierda ------------------------------------- */
 #main-content-left{
+    
+    position: relative;
+
     background-color: var(--fondogeneral);
     width: 49vw;
     display: flex;
@@ -17,7 +20,7 @@
 }
 
 #content-titulo  {
-    max-width: 600px;
+    width: 600px;
     height: 100%;
     padding: 40px;
     gap: 40px;
@@ -44,6 +47,10 @@
 }
 #content-titulo p{
     font-size: 1.2rem;
+}
+
+.imagenFondo{
+    position: absolute;
 }
 
 /* Linea Centro --------------------------------------------- */
@@ -120,4 +127,270 @@
 }
 .violetaImg4 {
     filter: grayscale(0.8) sepia(0) saturate(0.6) hue-rotate(20deg) brightness(2.5);
+}
+
+
+/* Tablets (768px - 1024px) */
+@media (max-width: 1024px) {
+    #main {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #main-linea-center {
+        width: 100%;
+        height: 20px;
+    }
+
+    #main-content-left{
+        width: 100%;
+        height: 500px;
+    }
+    #content-titulo{
+        width: 80%;
+    }
+
+    #main-content-right{
+        width: 100%;
+    }
+    #content-archivos{
+        width: 80%;
+        height: 500px;
+    }
+
+    #archivo:nth-child(1) {
+        top: 350px;
+        z-index: 4;
+    }
+    #archivo:nth-child(2) {
+        top: 250px;
+        z-index: 3;
+    }
+    #archivo:nth-child(3) {
+        top: 150px;
+        z-index: 2;
+    }
+    #archivo:nth-child(4) {
+        top: 50px;
+        z-index: 1;
+    }
+
+    #archivo:hover {
+        height: none;
+        transform: scale(1.05) translateZ(0);
+    }
+    
+}
+
+/* Mobile (menos de 767px) */
+@media (max-width: 767px) {
+
+    #main-content-left{
+        width: 100%;
+        height: auto;
+    }
+
+    #content-titulo h1 {
+        font-size: 15vw;
+    }
+
+    .titulo{
+        flex-direction: column;
+        align-items: baseline;
+    }
+    
+    #content-titulo h3,
+    #content-titulo p {
+        font-size: 1rem;
+    }
+    
+    #content-archivos h3{
+        font-size: 0.8rem;
+    }
+
+    #content-archivos {
+        width: 95%;
+        height: auto;
+    }
+}
+
+
+
+
+/* Modal */
+
+#close-Modal, #menu-Modal{
+    position: absolute;  
+    cursor: pointer;
+    background-size:cover;
+    top: 20px;
+    width: 27px;
+    height: 20px;
+    z-index: 101;     
+}
+#close-Modal{
+    background-image: url('./close-modal.png');
+    right: 6%;
+}
+#menu-Modal{
+    display: none;
+    background-image: url('./menu-modal.png');
+    left: 6%;
+}
+
+.modal-overlay {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.273);
+    display: flex;
+    justify-content: center;
+    align-items:end;
+}
+
+.modal-content {
+    width: 85vw;
+    height: 95vh;
+    color: var(--fondogeneral);
+}
+
+.modal-tabs {
+    display: flex;
+    justify-content:flex-start;
+    width: 100%;
+}
+
+.tab{
+    position: relative;  
+    border-radius: 10px 10px 0 0;
+}
+.tab h2{
+    top: 0;
+    padding: 20px;
+    cursor: pointer;
+    font-size: small;
+    text-align: center;
+}
+.tab img{
+    height: 100%;
+}
+
+.tab:hover{
+    translate: 0px -5px;
+    transform: scaleY(1.2);
+}
+
+.tabActivo{
+    color: #f4e773;
+}
+
+.modal-form{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+    height: 100%;
+}
+
+.modal-form #cuerpo{
+    height: 90vh;    
+}
+
+.modal-form #cuerpo, .tab img{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.margenleft{
+    margin-left: 15px;
+}
+
+
+/* Modal. Responsive  Tablets (768px - 1024px)*/
+@media (max-width: 1024px) {
+
+    body{
+        overflow-y: auto;
+    }
+
+    .modal-content {
+        width: 95vw;
+        height: 95vh;
+    }
+
+    
+
+    .margenleft{
+        margin-left: 15px;
+    }
+}
+
+/* Modal. Responsive (menos de 767px) */
+@media (max-width: 767px) {
+    .modal-form{
+        padding: 5px;
+    }
+    .modal-content {
+        width: 100vw;
+    }
+}
+
+/* Modal. Tab Responsive (menos de 550px) */
+@media (max-width: 550px) {
+
+    .modal-overlay{
+        align-items: start;
+        height: 100%;
+    }
+
+    .modal-content {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .modal-form{
+        flex: 1;
+        padding: 5px 5px 0px 5px;
+    }
+    .modal-form #cuerpo{
+        height: 100%;    
+    }
+    .modal-tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tab{
+        width: 100%;
+        display: none;
+    }
+    .tab img{
+        height: 150%;
+    }
+    .tabActivo{
+        display: block;
+        color: #f4e773;
+    }
+    .tab:hover{
+        translate: none;
+        transform: none;
+    }
+    .tab h2{
+        cursor: default;
+    }
+
+    #menu-Modal{
+        display: block;
+    }
+    #menu-Modal:hover{
+        transform: scale(1.1);
+    }
+
 }
