@@ -125,8 +125,12 @@ const Main = ()=>{
                         
                         <div className="modal-content">
 
-                            <div id="close-Modal" onClick={() => {setIsOpen(false); setIsMenuOpen(false)}}></div>
-                            <div id="menu-Modal" onClick={() => handleClick()}></div>
+                            <div id="close-Modal" onClick={() => {setIsOpen(false); setIsMenuOpen(false)}}>
+                                <img src="./close-modal.png" alt="closeModal" />
+                            </div>
+                            <div id="menu-Modal" onClick={() => handleClick()}>
+                                <img src="./menu-modal.png" alt="menuModal" />
+                            </div>
 
                             <div className="modal-tabs">
 
