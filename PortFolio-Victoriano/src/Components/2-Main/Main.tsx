@@ -4,7 +4,7 @@ import SobreMi from "./SobreMi/SobreMi";
 import Skills from "./Skills/Skills";
 import Proyectos from "./Proyectos/Proyectos";
 import Contacto from "./Contacto/Contacto";
-import RandomBox from "../RandomBox/RandomBox";
+// import RandomBox from "../RandomBox/RandomBox";
 
 const Main = ()=>{
     const [isOpen, setIsOpen] = useState(false);
