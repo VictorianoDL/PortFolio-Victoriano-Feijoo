@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Press Start 2P:wght@400;700&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: #909a92;
+}
+
+:root {
+    font-family: 'Press Start 2P';
+
+    --fondogeneral: #faf6d0; 
+    --color2: #c7d8ab; 
+    --color3: #909a92; 
+    --color4: #744f78; 
+    --color5: #30091e; 
+}
+
+h1,h2,h3,h4,p{
+    margin: 0;
+}
+
+p{
+    line-height: 1.58;
+}
+
+img{
+    -webkit-user-drag: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;    
+}

@@ -1,0 +1,116 @@
+#sobre-mi-content{
+    overflow-y: auto;
+    scrollbar-gutter: stable;
+    scrollbar-color: rgba(0,0,0,0.5) transparent;
+
+    position: relative;
+    width: 90%;
+    height: 100%;
+    color: rgb(50, 45, 50);
+    display: flex;
+    flex-flow: column wrap;
+}
+
+#foto, #papel, #papel-mobile{
+    image-rendering: pixelated;  
+}
+#papel, #papel-mobile{
+    position: absolute;
+    width: 100%;
+    height: 110vh;
+    z-index: -1;
+}
+#papel-mobile{
+    display: none;
+}
+#foto{
+    position: absolute;
+    transform: rotate(-1.8deg);
+    max-width: 280px;
+    max-height: 300px;
+}
+
+.foto-perfil{
+    flex: 0 1 100%;
+    width: 30%;
+}
+.nombre-edad{
+    flex: 1 1 0;
+}
+.descripcion{
+    flex: 8 1 0;
+    width: 65%;
+}
+
+.nombre-edad, .descripcion{
+    line-height: 1.8;
+    padding: 3%;
+}
+
+
+/*Tablets (768px - 1024px)*/
+@media (max-width: 1024px) {
+    #papel{
+        height: 100vh;
+    }
+
+    #foto{
+        width: 25%;
+        height: auto;
+    }
+}
+
+
+/* Mobile (menos de 767px) */
+@media (max-width: 767px) {
+    #papel{
+        display: none;
+    }
+    #papel-mobile{
+        display: block;
+    }
+
+    #foto{
+        position: relative;
+        width: 100%;
+    }
+
+    #sobre-mi-content{
+        position: relative;
+        width: 100%;
+        height: 700px;
+
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
+    .foto-perfil{
+        flex: 0 0 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 150px;
+    }
+    .nombre-edad{
+        flex: 0 0 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .nombre-edad, .descripcion{
+        line-height: 1.7;
+        padding: 5%;
+    }
+}
+
+@media (max-width: 480px) {
+    .nombre-edad{
+        font-size: 2.3vw;
+    }
+    .descripcion{
+        font-size: 3.5vw;
+    }
+}
