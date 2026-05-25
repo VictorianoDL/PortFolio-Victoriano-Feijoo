@@ -17,7 +17,7 @@ const SobreMi = ()=>{
                 <h4>Nombre: Victoriano Feijoo</h4>
                 <h4>Edad: 25 años</h4>
             </div>
-            <p className="descripcion" >Es desarrollador web con conocimientos en tecnologías FrontEnd y BackEnd; se inclina más hacia el diseño pero también puede trabajar sobre BackEnd normalmente. Se considera alguien perfeccionista y capaz, quiere aprender nuevas tecnologías para aplicar soluciones creativas y mejorar la experiencia del usuario.</p>
+            <p className="descripcion" >Soy desarrollador web con conocimientos en tecnologías FrontEnd y BackEnd; me inclino más hacia el diseño pero también puedo trabajar sobre BackEnd normalmente. Me considero alguien perfeccionista y capaz, quiero aprender nuevas tecnologías para aplicar soluciones creativas y mejorar la experiencia del usuario.</p>
         </div>
     )
 }
